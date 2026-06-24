@@ -1,7 +1,9 @@
 import Link from 'next/link'
 import Head from 'next/head'
+import PageReplacementSimulator from '../src/components/PageReplacementSimulator'
 
 export default function Module6(){
+
   return (
     <>
       <Head><title>Module 6 — Virtual Memory</title></Head>
@@ -77,7 +79,11 @@ export default function Module6(){
           <li><strong>Counting-Based (LFU / MFU):</strong> Replace based on frequency counts (least or most frequently used).</li>
         </ul>
 
-        <h2>5. Frame Allocation</h2>
+        <h2>5. Page Replacement Simulator</h2>
+        <p>Use the interactive simulator below to experiment with page references, frames, and replacement policies.</p>
+        <PageReplacementSimulator />
+
+        <h2>6. Frame Allocation</h2>
         <p>Frames are finite; OS must allocate fairly between processes.</p>
         <ul>
           <li><strong>Minimum Allocation:</strong> Set by architecture.</li>

@@ -1,7 +1,9 @@
 import Link from 'next/link'
 import Head from 'next/head'
+import DiskSchedulingSimulator from '../src/components/DiskSchedulingSimulator'
 
 export default function Module7(){
+
   return (
     <>
       <Head><title>Module 7 — Mass Storage Management</title></Head>
@@ -116,6 +118,8 @@ Total = 350 tracks`}</pre>
 183 -> 14 = 169
 14 -> 37 = 23
 Total = 322 tracks`}</pre>
+
+        <DiskSchedulingSimulator />
 
         <h2>Summary Comparison</h2>
         <p>Totals: FCFS = 640; SSTF = 236; SCAN = 236; C-SCAN = 350; LOOK = 322.</p>
