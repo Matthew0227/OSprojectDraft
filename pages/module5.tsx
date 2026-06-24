@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Head from 'next/head'
+import MemorySimulator from '../src/components/MemorySimulator'
 
 export default function Module5(){
   return (
@@ -120,28 +121,13 @@ CPU ──► [ Logical Address ] ──► ( &lt; Limit Register? ) ──► [
         </ul>
         <p>Solutions: <strong>Compaction</strong> (costly) and <strong>Non-contiguous Allocation</strong> (paging).</p>
 
+        <MemorySimulator />
+
         <h2>9. Paging: Non-Contiguous Memory Management</h2>
         <p>Paging eliminates external fragmentation by dividing logical address space and physical memory into fixed-size pages and frames.</p>
         <h3>Address Translation</h3>
         <p>The logical address is split into Page Number <em>p</em> and Page Offset <em>d</em>. The page table maps <em>p</em> to frame number <em>f</em>, and the physical address is computed as:</p>
         <p><strong>Physical Address (PA) = (Frame Number f × Page Size P) + Page Offset d</strong></p>
-        <div style={{background:'#f6f8fa', padding:'1rem', fontFamily:'monospace', whiteSpace:'pre'}}>
-Logical Address
-            ┌────┬────┐
-     CPU ──►│ p  │ d  │
-            └─┬──┴─┬──┘
-              │    │
-        ┌─────┴──┐ │
-        │Page Tbl│ │
-        ├────────┤ │
-      p │   f    │ │
-        └─────┬──┘ │
-              │    │
-            ┌─▼──┬─▼──┐
-            │ f  │ d  │ ──► Physical Memory
-            └────┴────┘
-          Physical Address
-        </div>
 
         <h3>The Frame Table</h3>
         <p>The OS maintains a Frame Table with one entry per physical frame, tracking allocation and which process/page occupies it.</p>
