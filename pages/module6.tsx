@@ -78,7 +78,6 @@ export default function Module6(){
 
         <h2>5. Page Replacement Simulator</h2>
         <p>Use the interactive simulator below to experiment with page references, frames, and replacement policies.</p>
-        <Module6Activity />
 
         <h2>6. Frame Allocation</h2>
         <p>Frames are finite; OS must allocate fairly between processes.</p>
@@ -87,6 +86,9 @@ export default function Module6(){
           <li><strong>Maximum Allocation:</strong> Limited by physical memory.</li>
           <li><strong>Balancing Act:</strong> Too few frames raises page-fault rates and cripples performance.</li>
         </ul>
+        <h2>Interactive Activity</h2>
+        <p>Practice page replacement and get instant feedback on your choices.</p>
+        <Module6Activity />
         <div style={{display:'flex', gap:'1rem', flexWrap:'wrap', marginTop:'2rem'}}>
           <Link href="/quiz" style={{display:'inline-block', padding:'0.75rem 1.2rem', borderRadius:'8px', background:'#0969da', color:'#fff', textDecoration:'none'}}>Take the Quiz</Link>
           <Link href="/" style={{display:'inline-block', padding:'0.75rem 1.2rem', borderRadius:'8px', border:'1px solid #0969da', color:'#0969da', textDecoration:'none'}}>← Back to modules</Link>

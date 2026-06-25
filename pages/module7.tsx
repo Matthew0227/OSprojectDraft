@@ -131,13 +131,13 @@ Total = 322 tracks`}</pre>
         <div style={{textAlign:'center', margin:'1rem 0'}}>
           <img src="/images/disk algorithm look graph.png" alt="LOOK Algorithm Graph" style={{maxWidth:'60%', height:'auto', borderRadius:'4px'}} />
         </div>
-
-        <DiskSchedulingSimulator />
-        <Module7Activity />
-
         <h2>Summary Comparison</h2>
         <p>Totals: FCFS = 640; SSTF = 236; SCAN = 236; C-SCAN = 350; LOOK = 322.</p>
         <p>SCAN &amp; C-SCAN suit heavy loads; FCFS is fine for very low queue lengths.</p>
+        <DiskSchedulingSimulator />
+        <h2>Interactive Activity</h2>
+        <p>Explore disk scheduling behavior with the simulator and answer applied questions.</p>
+        <Module7Activity />
 
         <div style={{display:'flex', gap:'1rem', flexWrap:'wrap', marginTop:'2rem'}}>
           <Link href="/quiz" style={{display:'inline-block', padding:'0.75rem 1.2rem', borderRadius:'8px', background:'#0969da', color:'#fff', textDecoration:'none'}}>Take the Quiz</Link>

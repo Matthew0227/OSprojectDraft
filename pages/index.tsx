@@ -5,11 +5,11 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>OS Goat Learning — Operating Systems Modules</title>
+        <title>GoatOS Learning — Operating Systems Modules</title>
       </Head>
       <main style={{fontFamily:'Inter, system-ui, Arial'}}>
         <div style={{background: `linear-gradient(135deg, #2c3e50 0%, #34495e 100%)`, padding:'2rem', borderRadius:'8px', marginTop:'2rem', borderLeft:`5px solid #f39c12`}}>
-          <h2 style={{fontSize:'1.25rem', fontWeight:'bold', margin:'0 0 1rem 0', color:'#fff'}}>Welcome to OS Goat Learning</h2>
+          <h2 style={{fontSize:'1.25rem', fontWeight:'bold', margin:'0 0 1rem 0', color:'#fff'}}>Welcome to GoatOS Learning</h2>
           <p style={{fontSize:'1.1rem', color:'#bbb', margin:0}}>Master core Operating Systems concepts through interactive modules, diagrams, and visualizations.</p>
         </div>
 

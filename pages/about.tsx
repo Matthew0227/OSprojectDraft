@@ -7,17 +7,17 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>About — OS Goat Learning</title>
+        <title>About — GoatOS Learning</title>
       </Head>
       <main style={{fontFamily:'Inter, system-ui, Arial', maxWidth:900, margin:'0 auto'}}>
         <div style={{background: `linear-gradient(135deg, ${themeColors.primary} 0%, #34495e 100%)`, padding:'2rem', borderRadius:'8px', marginBottom:'2rem', borderLeft:`5px solid ${themeColors.gold}`}}>
-          <h1 style={{color:'#fff', margin:'0 0 0.5rem 0'}}>About OS Goat Learning</h1>
+          <h1 style={{color:'#fff', margin:'0 0 0.5rem 0'}}>About GoatOS Learning</h1>
           <p style={{color:'#bbb', margin:0}}>Learn more about our mission and educational platform</p>
         </div>
         
         <h2 style={{color:themeColors.primary, borderBottom:`3px solid ${themeColors.gold}`, paddingBottom:'0.5rem'}}>Our Mission</h2>
         <p>
-          OS Goat Learning is a comprehensive, interactive educational platform designed to help students master 
+          GoatOS Learning is a comprehensive, interactive educational platform designed to help students master 
           fundamental Operating Systems concepts. We believe that learning complex OS topics should be accessible, 
           engaging, and supported by visual aids and interactive simulations.
         </p>
@@ -30,10 +30,10 @@ export default function About() {
           <li><strong>Practical Examples:</strong> Real-world calculations and scenarios that demonstrate OS principles</li>
         </ul>
 
-        <h2>Why "OS Goat"?</h2>
+        <h2>Why "GoatOS"?</h2>
         <p>
           We chose the goat as our mascot because goats are known for their ability to navigate complex terrain and reach 
-          high places. Much like goats scaling mountains, learners using this platform will climb the peaks of OS knowledge!
+          high places. Much like goats scaling mountains, learners using this platform will climb the peaks of OS knowledge.
         </p>
 
         <h2>Learning Path</h2>

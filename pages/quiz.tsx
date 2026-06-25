@@ -332,31 +332,6 @@ export default function QuizPage() {
             </div>
           ))}
         </section>
-
-        <section style={{ marginBottom: '2rem' }}>
-          <h2>CPU Scheduling Simulator</h2>
-          <p>Use the controls inside the simulator to input processes, select an algorithm, and observe the schedule.</p>
-          <GanttChartSimulator />
-        </section>
-
-        <section style={{ marginBottom: '2rem' }}>
-          <h2>Memory Management Simulator</h2>
-          <p>Enter memory blocks and processes, then run the allocation algorithm to see how memory is assigned.</p>
-          <MemorySimulator />
-        </section>
-
-        <section style={{ marginBottom: '2rem' }}>
-          <h2>Page Replacement Simulator</h2>
-          <p>Input a reference string, choose a page replacement algorithm, and step through page faults.</p>
-          <PageReplacementSimulator />
-        </section>
-
-        <section style={{ marginBottom: '2rem' }}>
-          <h2>Disk Scheduling Simulator</h2>
-          <p>Type disk request queues and choose a scheduling algorithm to watch head movement and total seek distance.</p>
-          <DiskSchedulingSimulator />
-        </section>
-
         <p><Link href="/">← Back to home</Link></p>
       </main>
     </>
