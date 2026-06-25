@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Head from 'next/head'
 import GanttChartSimulator from '../src/components/GanttChartSimulator'
+import CPUSchedExercise from "../src/components/CPUSchedExercise";
 
 export default function Module4(){
   const themeColors = { primary: '#2c3e50', gold: '#f39c12', light: '#f8f9fa', border: '#e6edf3' }
@@ -130,7 +131,7 @@ export default function Module4(){
         <h3>Interactive Simulator</h3>
         <p>Use the simulator below to experiment with scheduling behavior (FCFS shown by default):</p>
         <GanttChartSimulator />
-
+        <CPUSchedExercise />
         <p style={{marginTop:'2rem'}}><Link href="/">← Back to modules</Link></p>
       </main>
     </>

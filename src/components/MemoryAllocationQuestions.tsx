@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-// Define types for the quiz structure
 interface AnswerOption {
   id: string;
   text: string;
@@ -121,7 +120,7 @@ export default function Module5Quiz() {
             cursor: 'pointer'
           }}
         >
-          Retake Quiz
+          Retake Exercise
         </button>
       </div>
     );
@@ -130,7 +129,7 @@ export default function Module5Quiz() {
   return (
     <div style={{ marginTop: '1rem', padding: '1.5rem', backgroundColor: '#ffffff', borderRadius: '8px', border: '1px solid #d0d7de' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', borderBottom: '1px solid #e6edf3', paddingBottom: '10px' }}>
-        <h2 style={{ margin: 0, color: '#1f2328', fontSize: '1.25rem' }}>Quiz</h2>
+        <h2 style={{ margin: 0, color: '#1f2328', fontSize: '1.25rem' }}>Exercise</h2>
         <span style={{ color: '#57606a', fontWeight: 'bold' }}>
           Question {currentQuestionIdx + 1} of {quizData.length}
         </span>
