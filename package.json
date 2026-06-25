@@ -1,11 +1,15 @@
 {
-  "name": "os-learning-site",
+  "name": "goatos-learning",
   "version": "0.1.0",
   "private": true,
+  "description": "GoatOS Learning desktop app for OS concepts and simulators",
+  "author": "GoatOS Learning",
+  "main": "electron/main.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "package": "npm run build && electron-builder --win --x64",
     "lint": "next lint"
   },
   "dependencies": {
@@ -16,8 +20,35 @@
   "devDependencies": {
     "@types/node": "20.5.1",
     "@types/react": "18.2.21",
+    "electron": "^26.0.0",
+    "electron-builder": "^24.6.0",
     "eslint": "8.49.0",
     "eslint-config-next": "13.5.8",
+    "nsis": "^0.0.0",
     "typescript": "5.2.2"
+  },
+  "build": {
+    "appId": "com.goatos.learning",
+    "productName": "GoatOS Learning",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "out/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "portable"
+      ,
+      "artifactName": "GoatOS Learning_${version}_portable.exe"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true
+    }
   }
 }
