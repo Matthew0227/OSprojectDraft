@@ -1,15 +1,21 @@
 import Link from 'next/link'
 import Head from 'next/head'
 import GanttChartSimulator from '../src/components/GanttChartSimulator'
+import CPUSchedExercise from "../src/components/CPUSchedExercise";
 
 export default function Module4(){
+  const themeColors = { primary: '#2c3e50', gold: '#f39c12', light: '#f8f9fa', border: '#e6edf3' }
+  
   return (
     <>
       <Head><title>Module 4 — CPU Scheduling</title></Head>
       <main style={{fontFamily:'Inter, system-ui, Arial', padding:'2rem', maxWidth:1200}}>
-        <h1>Module 4 | Lesson 3: CPU Scheduling</h1>
+        <div style={{background: `linear-gradient(135deg, ${themeColors.primary} 0%, #34495e 100%)`, padding:'2rem', borderRadius:'8px', marginBottom:'2rem', borderLeft:`5px solid ${themeColors.gold}`}}>
+          <h1 style={{color:'#fff', margin:'0 0 0.5rem 0'}}>Module 4: CPU Scheduling</h1>
+          <p style={{color:'#bbb', margin:0}}>Master process scheduling algorithms and optimization techniques</p>
+        </div>
 
-        <h2>Introduction &amp; Basic Concepts</h2>
+        <h2 style={{color:themeColors.primary, borderBottom:`3px solid ${themeColors.gold}`, paddingBottom:'0.5rem'}}>Introduction &amp; Basic Concepts</h2>
         <p>In a multiprogramming operating system, multiple processes are kept in main memory simultaneously. The primary objective of multiprogramming is <strong>maximum CPU utilization</strong>.</p>
 
         <ul>
@@ -24,7 +30,7 @@ export default function Module4(){
           <li><strong>Dispatch Latency:</strong> The total time it takes for the dispatcher to stop one running process and start another one.</li>
         </ul>
 
-        <h2>The CPU-I/O Burst Cycle</h2>
+        <h2 style={{color:'#2c3e50', borderBottom:'3px solid #f39c12', paddingBottom:'0.5rem'}}>The CPU-I/O Burst Cycle</h2>
         <p>Process execution consists of an alternating cycle of CPU execution (<strong>CPU burst</strong>) and waiting for input/output (<strong>I/O burst</strong>).</p>
         <div style={{textAlign:'center', margin:'1rem 0'}}>
           <img src="/images/The CPU-IO Burst Cycle diagram.png" alt="CPU-I/O Burst Cycle Illustration" style={{maxWidth:'80%', height:'auto', borderRadius:'4px'}} />
@@ -37,7 +43,7 @@ export default function Module4(){
           <li><strong>CPU-Bound Process:</strong> Spends more time doing calculations; few very long CPU bursts.</li>
         </ul>
 
-        <h2>Preemptive vs. Nonpreemptive Scheduling</h2>
+        <h2 style={{color:'#2c3e50', borderBottom:'3px solid #f39c12', paddingBottom:'0.5rem'}}>Preemptive vs. Nonpreemptive Scheduling</h2>
         <p>CPU scheduling decisions typically take place under four conditions:</p>
         <ol>
           <li>When a process switches from the <strong>running</strong> state to the <strong>waiting</strong> state.</li>
@@ -52,7 +58,7 @@ export default function Module4(){
           <li><strong>Preemptive Scheduling:</strong> Decisions happen under conditions 2 and 3. The OS can interrupt a running process and move it back to ready, preventing a single process from monopolizing the CPU.</li>
         </ul>
 
-        <h2>Scheduling Performance Criteria</h2>
+        <h2 style={{color:'#2c3e50', borderBottom:'3px solid #f39c12', paddingBottom:'0.5rem'}}>Scheduling Performance Criteria</h2>
         <ul>
           <li><strong>CPU Utilization:</strong> Fraction of time CPU is actively working. (Objective: Maximize)</li>
           <li><strong>Throughput:</strong> Number of processes completed per unit time. (Objective: Maximize)</li>
@@ -69,7 +75,7 @@ export default function Module4(){
           <strong>Real-Time Systems:</strong> Meet hard deadlines and avoid data/quality degradation.</p>
         </blockquote>
 
-        <h2>Core Scheduling Algorithms</h2>
+        <h2 style={{color:'#2c3e50', borderBottom:'3px solid #f39c12', paddingBottom:'0.5rem'}}>Core Scheduling Algorithms</h2>
 
         <h3>1. First-Come, First-Served (FCFS)</h3>
         <ul>
