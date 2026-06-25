@@ -3,14 +3,18 @@ import Head from 'next/head'
 import DiskSchedulingSimulator from '../src/components/DiskSchedulingSimulator'
 
 export default function Module7(){
-
+  const themeColors = { primary: '#2c3e50', gold: '#f39c12', light: '#f8f9fa', border: '#e6edf3' }
+  
   return (
     <>
       <Head><title>Module 7 — Mass Storage Management</title></Head>
-      <main style={{fontFamily:'Inter, system-ui, Arial', padding:'2rem', maxWidth:900}}>
-        <h1>Module 7: Mass Storage Management</h1>
+      <main style={{fontFamily:'Inter, system-ui, Arial', padding:'2rem', maxWidth:1200}}>
+        <div style={{background: `linear-gradient(135deg, ${themeColors.primary} 0%, #34495e 100%)`, padding:'2rem', borderRadius:'8px', marginBottom:'2rem', borderLeft:`5px solid ${themeColors.gold}`}}>
+          <h1 style={{color:'#fff', margin:'0 0 0.5rem 0'}}>Module 7: Mass Storage Management</h1>
+          <p style={{color:'#bbb', margin:0}}>Learn disk structure, I/O scheduling, and storage management</p>
+        </div>
 
-        <h2>Learning Objectives</h2>
+        <h2 style={{color:themeColors.primary, borderBottom:`3px solid ${themeColors.gold}`, paddingBottom:'0.5rem'}}>1. Mass-Storage &amp; Disk Structure</h2>
         <p>By the end of this module, you should be able to:</p>
         <ul>
           <li>Discuss the physical and logical structure of a disk.</li>
@@ -133,7 +137,7 @@ Total = 322 tracks`}</pre>
         <p>Totals: FCFS = 640; SSTF = 236; SCAN = 236; C-SCAN = 350; LOOK = 322.</p>
         <p>SCAN &amp; C-SCAN suit heavy loads; FCFS is fine for very low queue lengths.</p>
 
-        <p><Link href="/">← Back to modules</Link></p>
+        <p><Link href="/" style={{color:'#f39c12', textDecoration:'none', fontWeight:'bold'}}>← Back to modules</Link></p>
       </main>
     </>
   )

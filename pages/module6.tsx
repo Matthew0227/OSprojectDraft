@@ -86,7 +86,7 @@ export default function Module6(){
           <li><strong>Maximum Allocation:</strong> Limited by physical memory.</li>
           <li><strong>Balancing Act:</strong> Too few frames raises page-fault rates and cripples performance.</li>
         </ul>
-        <p><Link href="/">← Back to modules</Link></p>
+        <p><Link href="/" style={{color:'#f39c12', textDecoration:'none', fontWeight:'bold'}}>← Back to modules</Link></p>
       </main>
     </>
   )
