@@ -8,6 +8,7 @@ export default function Navbar(){
       <Link href="/module5">Module 5</Link>
       <Link href="/module6">Module 6</Link>
       <Link href="/module7">Module 7</Link>
+      <Link href="/quiz">Quiz</Link>
     </nav>
   )
 }

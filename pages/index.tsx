@@ -15,6 +15,7 @@ export default function Home() {
           <li><Link href="/module5">Module 5: Memory Management</Link></li>
           <li><Link href="/module6">Module 6: Virtual Memory</Link></li>
           <li><Link href="/module7">Module 7: Mass Storage Management</Link></li>
+          <li><Link href="/quiz">Quiz: Full Practice</Link></li>
         </ul>
       </main>
     </>

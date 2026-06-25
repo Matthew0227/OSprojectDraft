@@ -126,7 +126,10 @@ export default function Module4(){
         <p>Use the simulator below to experiment with scheduling behavior (FCFS shown by default):</p>
         <GanttChartSimulator />
 
-        <p style={{marginTop:'2rem'}}><Link href="/">← Back to modules</Link></p>
+        <div style={{display:'flex', gap:'1rem', flexWrap:'wrap', marginTop:'2rem'}}>
+          <Link href="/quiz" style={{display:'inline-block', padding:'0.75rem 1.2rem', borderRadius:'8px', background:'#0969da', color:'#fff', textDecoration:'none'}}>Take the Quiz</Link>
+          <Link href="/" style={{display:'inline-block', padding:'0.75rem 1.2rem', borderRadius:'8px', border:'1px solid #0969da', color:'#0969da', textDecoration:'none'}}>← Back to modules</Link>
+        </div>
       </main>
     </>
   )
