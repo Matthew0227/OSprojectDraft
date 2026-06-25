@@ -31,17 +31,8 @@ export default function Module5(){
 
         <h2>2. Address Binding &amp; Processing Stages</h2>
          <p>Addresses in a source program are typically symbolic. Before execution, they must be mapped to physical memory addresses through a multi-step translation chain:</p>
-         <div style={{background:'#f6f8fa', padding:'1rem', fontFamily:'monospace', textAlign:'center'}}>
-           <div>[ Source Program ]</div>
-           <div>(Compile Time: Preprocessor &amp; Compiler)</div>
-           <div style={{fontSize:'1.25rem'}}>▼</div>
-           <div>[ Relocatable Code / Object Module ]</div>
-           <div>(Load Time: Linker &amp; Linkage Editor)</div>
-           <div style={{fontSize:'1.25rem'}}>▼</div>
-           <div>[ Load Module / Executable ]</div>
-           <div>(Execution Time: Loader &amp; MMU)</div>
-           <div style={{fontSize:'1.25rem'}}>▼</div>
-           <div>[ In-Memory Binary Image / Absolute Addresses ]</div>
+         <div style={{textAlign:'center', margin:'1rem 0'}}>
+           <img src="/images/Address Binding stages.png" alt="Address Binding Stages Illustration" style={{maxWidth:'90%', height:'auto', borderRadius:'4px'}} />
          </div>
 
         <h3>Three Stages of Address Binding</h3>
@@ -96,10 +87,8 @@ export default function Module5(){
 
         <h3>Hardware Address Protection</h3>
         <p>Use Base (Relocation) register and Limit register to enforce address bounds. If logical address &ge; limit → trap.</p>
-        <div style={{background:'#f6f8fa', padding:'1rem', fontFamily:'monospace', whiteSpace:'pre'}}>
-CPU ──► [ Logical Address ] ──► ( &lt; Limit Register? ) ──► [Yes] ──► [ + Base Register ] ──► Physical Memory
-                                           │
-                                         [No] ──► Trap: Addressing Error
+        <div style={{textAlign:'center', margin:'1rem 0'}}>
+          <img src="/images/Hardware Address Protection diagram.png" alt="Hardware Address Protection Illustration" style={{maxWidth:'80%', height:'auto', borderRadius:'4px'}} />
         </div>
 
         <h2>7. Contiguous Memory Allocation Schemes</h2>

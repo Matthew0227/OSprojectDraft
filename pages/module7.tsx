@@ -29,15 +29,8 @@ export default function Module7(){
 
         <h3>Physical Composition</h3>
         <p>A magnetic disk system consists of several platters, a spindle, read/write heads, and an arm assembly.</p>
-        <div style={{background:'#f6f8fa', padding:'1rem', fontFamily:'monospace', whiteSpace:'pre', textAlign:'center'}}>
-{`   +------------------------------+   <- Track
-   |                            |   <- Platter surface
-   |          ( O )             |   <- Spindle
-   |                            |
-   +------------------------------+
-
-   [ Read/Write Heads ]   <- Arm Assembly
-`}
+        <div style={{textAlign:'center', margin:'1.5rem 0'}}>
+          <img src="/images/disk-structure.png" alt="Disk Structure Diagram" style={{maxWidth:'100%', height:'auto', borderRadius:'4px'}} />
         </div>
 
         <h3>Logical Geometry</h3>
@@ -69,6 +62,9 @@ export default function Module7(){
 124 -> 65 = 59
 65 -> 67 = 2
 Total = 640 tracks`}</pre>
+        <div style={{textAlign:'center', margin:'1rem 0'}}>
+          <img src="/images/disk algorithm fcfs graph.png" alt="FCFS Algorithm Graph" style={{maxWidth:'60%', height:'auto', borderRadius:'4px'}} />
+        </div>
 
         <h3>2. Shortest Seek Time First (SSTF)</h3>
         <pre style={{background:'#f6f8fa', padding:'0.5rem', fontFamily:'monospace'}}>{`53 -> 65 = 12
@@ -80,6 +76,9 @@ Total = 640 tracks`}</pre>
 122 -> 124 = 2
 124 -> 183 = 59
 Total = 236 tracks`}</pre>
+        <div style={{textAlign:'center', margin:'1rem 0'}}>
+          <img src="/images/disk algorithm ssjt graph.png" alt="SSTF Algorithm Graph" style={{maxWidth:'60%', height:'auto', borderRadius:'4px'}} />
+        </div>
 
         <h3>3. SCAN (Elevator)</h3>
         <p>Head sweeps toward an end then reverses.</p>
@@ -93,6 +92,9 @@ Total = 236 tracks`}</pre>
 122 -> 124 = 2
 124 -> 183 = 59
 Total = 236 tracks`}</pre>
+        <div style={{textAlign:'center', margin:'1rem 0'}}>
+          <img src="/images/disk algorithm scan graph.png" alt="SCAN Algorithm Graph" style={{maxWidth:'60%', height:'auto', borderRadius:'4px'}} />
+        </div>
 
         <h3>4. C-SCAN (Circular SCAN)</h3>
         <p>Head sweeps one way, wraps to start without servicing on return.</p>
@@ -106,6 +108,9 @@ Total = 236 tracks`}</pre>
 0 -> 14 = 14
 14 -> 37 = 23
 Total = 350 tracks`}</pre>
+        <div style={{textAlign:'center', margin:'1rem 0'}}>
+          <img src="/images/disk algorithm c-scan graph.png" alt="C-SCAN Algorithm Graph" style={{maxWidth:'60%', height:'auto', borderRadius:'4px'}} />
+        </div>
 
         <h3>5. LOOK</h3>
         <p>Like SCAN but reverses at last request.</p>
@@ -118,6 +123,9 @@ Total = 350 tracks`}</pre>
 183 -> 14 = 169
 14 -> 37 = 23
 Total = 322 tracks`}</pre>
+        <div style={{textAlign:'center', margin:'1rem 0'}}>
+          <img src="/images/disk algorithm look graph.png" alt="LOOK Algorithm Graph" style={{maxWidth:'60%', height:'auto', borderRadius:'4px'}} />
+        </div>
 
         <DiskSchedulingSimulator />
 
