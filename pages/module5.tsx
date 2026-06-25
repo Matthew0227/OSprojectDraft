@@ -128,7 +128,7 @@ export default function Module5(){
         <h2>Interactive Activity</h2>
         <MemoryAllocationGame />
         <MemoryAllocationQuestions />
-        <p><Link href="/">← Back to modules</Link></p>
+        <p><Link href="/" style={{color:'#f39c12', textDecoration:'none', fontWeight:'bold'}}>← Back to modules</Link></p>
       </main>
     </>
   )
