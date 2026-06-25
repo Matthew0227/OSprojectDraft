@@ -4,14 +4,18 @@ import PageReplacementSimulator from '../src/components/PageReplacementSimulator
 import Module6Activity from '../src/components/Module6Activity'
 
 export default function Module6(){
+  const themeColors = { primary: '#2c3e50', gold: '#f39c12', light: '#f8f9fa', border: '#e6edf3' }
 
   return (
     <>
       <Head><title>Module 6 — Virtual Memory</title></Head>
-      <main style={{fontFamily:'Inter, system-ui, Arial', padding:'2rem', maxWidth:900}}>
-        <h1>Module 6: Virtual Memory</h1>
+      <main style={{fontFamily:'Inter, system-ui, Arial', padding:'2rem', maxWidth:1200}}>
+        <div style={{background: `linear-gradient(135deg, ${themeColors.primary} 0%, #34495e 100%)`, padding:'2rem', borderRadius:'8px', marginBottom:'2rem', borderLeft:`5px solid ${themeColors.gold}`}}>
+          <h1 style={{color:'#fff', margin:'0 0 0.5rem 0'}}>Module 6: Virtual Memory</h1>
+          <p style={{color:'#bbb', margin:0}}>Explore virtual memory, demand paging, and replacement algorithms</p>
+        </div>
 
-        <h2>1. Review of Memory Management</h2>
+        <h2 style={{color:themeColors.primary, borderBottom:`3px solid ${themeColors.gold}`, paddingBottom:'0.5rem'}}>1. Review of Memory Management</h2>
         <p>Before diving into Virtual Memory, review core requirements and hardware constraints of standard memory management.</p>
         <h3>What is Required in Memory Management?</h3>
         <ul>
@@ -28,7 +32,7 @@ export default function Module6(){
         <p><strong>Base and Limit Registers:</strong> Protect processes using a base (relocation) register and a limit register. If logical address &lt; limit, add base to get the physical address; otherwise trap.</p>
         <p><strong>Paging Hardware:</strong> Breaks logical memory into pages (p) with offsets (d), translating page numbers into frames (f) via a Page Table.</p>
 
-        <h2>2. Introduction to Virtual Memory</h2>
+        <h2 style={{color:themeColors.primary, borderBottom:`3px solid ${themeColors.gold}`, paddingBottom:'0.5rem'}}>2. Introduction to Virtual Memory</h2>
         <h3>What is Virtual Memory?</h3>
         <p>Virtual Memory separates user logical memory from physical memory. Only parts of a program need be in memory for execution, saving RAM and increasing multiprogramming.</p>
         <h3>Key Characteristics &amp; Benefits</h3>
@@ -39,7 +43,7 @@ export default function Module6(){
           <li>Efficient shared memory between processes.</li>
         </ul>
 
-        <h2>3. Demand Paging</h2>
+        <h2 style={{color:themeColors.primary, borderBottom:`3px solid ${themeColors.gold}`, paddingBottom:'0.5rem'}}>3. Demand Paging</h2>
         <p>Demand Paging brings a page into physical memory only when it is needed.</p>
         <h3>The Lazy Pager</h3>
         <p>Lazy pager swaps in pages on reference rather than preloading an entire process.</p>
@@ -64,7 +68,7 @@ export default function Module6(){
         <p>Given: ma = 5 microseconds; page fault service time = 10,000 microseconds (10 ms); p = 0.2.</p>
         <p>Calculation: EAT = (1 - 0.2) × 5 + 0.2 × 10000 = 4 + 2000 = 2004 microseconds.</p>
 
-        <h2>4. Page Replacement Algorithms (PRA)</h2>
+        <h2 style={{color:themeColors.primary, borderBottom:`3px solid ${themeColors.gold}`, paddingBottom:'0.5rem'}}>4. Page Replacement Algorithms (PRA)</h2>
         <p>When no free frames exist, choose a victim page to replace using a Page Replacement Algorithm.</p>
         <h3>Summary of Major Algorithms</h3>
         <ul>
@@ -76,19 +80,18 @@ export default function Module6(){
           <li><strong>Counting-Based (LFU / MFU):</strong> Replace based on frequency counts (least or most frequently used).</li>
         </ul>
 
-        <h2>5. Page Replacement Simulator</h2>
+        <h2 style={{color:themeColors.primary, borderBottom:`3px solid ${themeColors.gold}`, paddingBottom:'0.5rem'}}>5. Page Replacement Simulator</h2>
         <p>Use the interactive simulator below to experiment with page references, frames, and replacement policies.</p>
 
-        <h2>6. Frame Allocation</h2>
+        <h2 style={{color:themeColors.primary, borderBottom:`3px solid ${themeColors.gold}`, paddingBottom:'0.5rem'}}>6. Frame Allocation</h2>
         <p>Frames are finite; OS must allocate fairly between processes.</p>
         <ul>
           <li><strong>Minimum Allocation:</strong> Set by architecture.</li>
           <li><strong>Maximum Allocation:</strong> Limited by physical memory.</li>
           <li><strong>Balancing Act:</strong> Too few frames raises page-fault rates and cripples performance.</li>
         </ul>
-        <h2>Interactive Activity</h2>
-        <p>Practice page replacement and get instant feedback on your choices.</p>
-        <Module6Activity />
+        <h2 style={{color:themeColors.primary, borderBottom:`3px solid ${themeColors.gold}`, paddingBottom:'0.5rem'}}>Interactive Activity</h2>
+        <p>Practice page replacement and get instant feedback on your choices.</p>        <Module6Activity />
         <div style={{display:'flex', gap:'1rem', flexWrap:'wrap', marginTop:'2rem'}}>
           <Link href="/quiz" style={{display:'inline-block', padding:'0.75rem 1.2rem', borderRadius:'8px', background:'#0969da', color:'#fff', textDecoration:'none'}}>Take the Quiz</Link>
           <Link href="/" style={{display:'inline-block', padding:'0.75rem 1.2rem', borderRadius:'8px', border:'1px solid #0969da', color:'#0969da', textDecoration:'none'}}>← Back to modules</Link>
