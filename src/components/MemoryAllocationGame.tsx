@@ -184,9 +184,8 @@ export default function Module5Game() {
 
   return (
     <div style={{ marginTop: '1rem' }}>
-      <h2 style={{ textAlign: 'center', color: '#1f2328' }}>Module 5: MVT Memory Management Interactive</h2>
       <p style={{ textAlign: 'center', color: '#57606a', fontSize: '0.95rem' }}>
-        <strong>System Constraints:</strong> RAM = 256K | OS Size = 40K (Low Memory) | Free Variable Allocations = 216K
+        <strong>System Constraints:</strong> Memory = 256K | OS Size = 40K | Free Space = 216K
       </p>
 
       {/* Mode Switches */}

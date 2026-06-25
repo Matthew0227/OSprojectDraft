@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import Head from 'next/head'
 import MemorySimulator from '../src/components/MemorySimulator'
+import MemoryAllocationGame from "../src/components/MemoryAllocationGame";
+import MemoryAllocationQuestions from "../src/components/MemoryAllocationQuestions";
 
 export default function Module5(){
   return (
@@ -123,6 +125,9 @@ export default function Module5(){
 
         <h3>Fragmentation in Paging</h3>
         <p>External fragmentation: eliminated. Internal fragmentation: may occur in the last page if process size isn't a multiple of page size. Example: page size 16 KB, job 30 KB → allocated 32 KB → internal fragmentation 2 KB.</p>
+        <h2>Interactive Activity</h2>
+        <MemoryAllocationGame />
+        <MemoryAllocationQuestions />
         <p><Link href="/">← Back to modules</Link></p>
       </main>
     </>
