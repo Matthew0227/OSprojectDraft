@@ -26,15 +26,9 @@ export default function Module4(){
 
         <h2>The CPU-I/O Burst Cycle</h2>
         <p>Process execution consists of an alternating cycle of CPU execution (<strong>CPU burst</strong>) and waiting for input/output (<strong>I/O burst</strong>).</p>
-          <div style={{background:'#f6f8fa', padding:'1rem', fontFamily:'monospace', textAlign:'center'}}>
-            <div>[ CPU Burst: load/store, add, read from file ]</div>
-            <div style={{textAlign:'center'}}>▼</div>
-            <div>[ I/O Burst: wait for I/O ]</div>
-            <div style={{textAlign:'center'}}>▼</div>
-            <div>[ CPU Burst: store increment index, write to file ]</div>
-            <div style={{textAlign:'center'}}>▼</div>
-            <div>[ I/O Burst: wait for I/O ]</div>
-          </div>
+        <div style={{textAlign:'center', margin:'1rem 0'}}>
+          <img src="/images/The CPU-IO Burst Cycle diagram.png" alt="CPU-I/O Burst Cycle Illustration" style={{maxWidth:'80%', height:'auto', borderRadius:'4px'}} />
+        </div>
 
         <h3>Classifying Processes</h3>
         <p>The performance of scheduling algorithms depends heavily on the characterization of process bursts. Processes generally fall into two categories:</p>

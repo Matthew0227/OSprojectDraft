@@ -20,12 +20,8 @@ export default function Module6(){
 
         <h3>Address Mapping: Logical vs. Physical Memory</h3>
         <p>The CPU generates logical addresses that are dynamically mapped to physical addresses in hardware.</p>
-        <div style={{background:'#f6f8fa', padding:'1rem', fontFamily:'monospace', whiteSpace:'pre', textAlign:'center'}}>
-      {`         +-----+   Logical Address    +-------------------+   Physical Address    +--------+
-         | CPU | -------------------> | Hardware Mapping  | ------------------->  | Memory |
-         +-----+                      | (Base/Limit/Page) |                       +--------+
-     +-------------------+
-      `}
+        <div style={{textAlign:'center', margin:'1rem 0'}}>
+          <img src="/images/address mapping illustration.png" alt="Address Mapping Illustration" style={{maxWidth:'60%', height:'auto', borderRadius:'4px'}} />
         </div>
 
         <p><strong>Base and Limit Registers:</strong> Protect processes using a base (relocation) register and a limit register. If logical address &lt; limit, add base to get the physical address; otherwise trap.</p>
