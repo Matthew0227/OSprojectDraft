@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import React, { useState } from 'react'
 import PageReplacementSimulator from './PageReplacementSimulator'
 
 type Choice = {
@@ -14,7 +14,7 @@ type MultipleChoiceQuestion = {
   choices: Choice[]
 }
 
-const multipleChoiceQuestions: MultipleChoiceQuestion[] = [
+const quizData: MultipleChoiceQuestion[] = [
   {
     id: 1,
     question: 'Which page replacement algorithm removes the oldest loaded page first?',
@@ -68,87 +68,162 @@ const multipleChoiceQuestions: MultipleChoiceQuestion[] = [
 ]
 
 export default function Module6Activity() {
-  const [answers, setAnswers] = useState<Record<number, string>>({})
+  const [currentQuestionIdx, setCurrentQuestionIdx] = useState(0)
+  const [selectedOption, setSelectedOption] = useState<Choice | null>(null)
+  const [score, setScore] = useState(0)
+  const [showResults, setShowResults] = useState(false)
 
-  const score = useMemo(
-    () => multipleChoiceQuestions.filter((question) => {
-      const selected = answers[question.id]
-      return selected ? question.choices.some((choice) => choice.id === selected && choice.isCorrect) : false
-    }).length,
-    [answers],
-  )
+  const currentQuestion = quizData[currentQuestionIdx]
 
-  const resetActivity = () => setAnswers({})
+  const handleSelectOption = (option: Choice) => {
+    if (selectedOption) return
+    setSelectedOption(option)
+    if (option.isCorrect) {
+      setScore(score + 1)
+    }
+  }
+
+  const handleNext = () => {
+    if (currentQuestionIdx + 1 < quizData.length) {
+      setCurrentQuestionIdx(currentQuestionIdx + 1)
+      setSelectedOption(null)
+    } else {
+      setShowResults(true)
+    }
+  }
+
+  const restartQuiz = () => {
+    setCurrentQuestionIdx(0)
+    setSelectedOption(null)
+    setScore(0)
+    setShowResults(false)
+  }
+
+  if (showResults) {
+    return (
+      <div style={{ padding: '2rem', backgroundColor: '#f6f8fa', borderRadius: '8px', border: '1px solid #d0d7de', textAlign: 'center' }}>
+        <h2 style={{ color: '#1f2328' }}>Virtual Memory Activity Complete!</h2>
+        <p style={{ fontSize: '1.1rem', color: '#57606a' }}>
+          You answered <strong>{score}</strong> out of <strong>{quizData.length}</strong> questions correctly.
+        </p>
+        <button
+          onClick={restartQuiz}
+          style={{
+            marginTop: '20px',
+            padding: '10px 22px',
+            backgroundColor: '#0969da',
+            color: '#fff',
+            border: 'none',
+            borderRadius: '6px',
+            fontWeight: 'bold',
+            cursor: 'pointer',
+          }}
+        >
+          Retake Activity
+        </button>
+      </div>
+    )
+  }
 
   return (
-    <div style={{ marginTop: '2rem', padding: '1.5rem', backgroundColor: '#fff', border: '1px solid #d8e2ea', borderRadius: '10px' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+    <div style={{ marginTop: '2rem', padding: '1.5rem', backgroundColor: '#ffffff', borderRadius: '8px', border: '1px solid #d0d7de' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', borderBottom: '1px solid #e6edf3', paddingBottom: '10px' }}>
         <div>
-          <h2 style={{ margin: 0 }}>Module 6 Activity</h2>
-          <p style={{ margin: '0.5rem 0 0', color: '#57606a' }}>5 multiple-choice questions and an interactive page replacement simulator.</p>
+          <h2 style={{ margin: 0, color: '#1f2328', fontSize: '1.25rem' }}>Virtual Memory Activity</h2>
+          <p style={{ margin: '0.5rem 0 0', color: '#57606a' }}>Answer the quiz and then explore the page replacement simulator below.</p>
         </div>
-        <div style={{ padding: '0.75rem 1rem', background: '#f1f8ff', borderRadius: '8px', textAlign: 'center' }}>
-          <div style={{ fontSize: '0.9rem', color: '#57606a' }}>Score</div>
-          <div style={{ fontSize: '1.5rem', fontWeight: '700' }}>{score} / {multipleChoiceQuestions.length}</div>
-          <button
-            onClick={resetActivity}
-            style={{ marginTop: '0.75rem', padding: '0.55rem 0.95rem', border: 'none', borderRadius: '8px', background: '#0969da', color: '#fff', cursor: 'pointer' }}
-          >
-            Reset
-          </button>
+        <span style={{ color: '#57606a', fontWeight: 'bold' }}>
+          Question {currentQuestionIdx + 1} of {quizData.length}
+        </span>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
+        <div>
+          <div style={{ display: 'inline-block', padding: '6px 12px', backgroundColor: '#e8f1ff', color: '#0969da', borderRadius: '4px', fontWeight: 'bold', fontSize: '0.85rem', marginBottom: '10px' }}>
+            Virtual Memory Quiz
+          </div>
+          <h3 style={{ margin: 0, color: '#24292f', fontSize: '1.1rem', lineHeight: '1.5' }}>{currentQuestion.question}</h3>
+        </div>
+
+        <div style={{ backgroundColor: '#f6f8fa', border: '1px solid #d0d7de', borderRadius: '6px', overflow: 'hidden' }}>
+          <div style={{ backgroundColor: '#f0f3f6', padding: '10px 14px', fontWeight: 'bold', borderBottom: '1px solid #d0d7de', fontSize: '0.9rem', color: '#57606a' }}>
+            Activity Summary
+          </div>
+          <div style={{ padding: '14px' }}>
+            <p style={{ margin: '0 0 8px', color: '#24292f' }}><strong>Total questions:</strong> {quizData.length}</p>
+            <p style={{ margin: '0 0 8px', color: '#24292f' }}><strong>Current score:</strong> {score}</p>
+            <p style={{ margin: 0, color: '#57606a' }}>Use the simulator to compare how page replacement decisions affect memory performance.</p>
+          </div>
         </div>
       </div>
 
-      {multipleChoiceQuestions.map((question) => (
-        <div key={question.id} style={{ marginTop: '1rem', padding: '1rem', background: '#f6f8fa', borderRadius: '8px', border: '1px solid #e7edf3' }}>
-          <p style={{ margin: '0 0 1rem', fontWeight: '700' }}>{question.id}. {question.question}</p>
-          <div style={{ display: 'grid', gap: '0.75rem' }}>
-            {question.choices.map((choice) => {
-              const selected = answers[question.id] === choice.id
-              const showCorrect = Boolean(answers[question.id])
-              const isCorrect = choice.isCorrect
-              let style = {
-                background: '#fff',
-                border: '1px solid #d0d7de',
-                color: '#24292f',
-              }
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+        {currentQuestion.choices.map((option) => {
+          let bgColor = '#ffffff'
+          let borderColor = '#d0d7de'
+          let textColor = '#24292f'
 
-              if (showCorrect) {
-                if (selected && isCorrect) {
-                  style = { background: '#dafbe1', border: '1px solid #1f883d', color: '#1f883d' }
-                } else if (selected && !isCorrect) {
-                  style = { background: '#ffebe9', border: '1px solid #cf222e', color: '#cf222e' }
-                } else if (isCorrect) {
-                  style = { background: '#f0f6fc', border: '1px solid #c6e3f6', color: '#0969da' }
-                }
-              }
+          if (selectedOption) {
+            if (option.isCorrect) {
+              bgColor = '#dafbe1'
+              borderColor = '#1f883d'
+              textColor = '#1f883d'
+            } else if (selectedOption.id === option.id && !option.isCorrect) {
+              bgColor = '#ffebe9'
+              borderColor = '#cf222e'
+              textColor = '#cf222e'
+            }
+          }
 
-              return (
-                <button
-                  key={choice.id}
-                  type="button"
-                  onClick={() => setAnswers({ ...answers, [question.id]: choice.id })}
-                  disabled={Boolean(answers[question.id])}
-                  style={{
-                    textAlign: 'left',
-                    padding: '0.85rem 1rem',
-                    borderRadius: '8px',
-                    cursor: 'pointer',
-                    ...style,
-                  }}
-                >
-                  <strong>{choice.id}.</strong> {choice.text}
-                </button>
-              )
-            })}
+          return (
+            <button
+              key={option.id}
+              type="button"
+              onClick={() => handleSelectOption(option)}
+              disabled={Boolean(selectedOption)}
+              style={{
+                textAlign: 'left',
+                padding: '14px 18px',
+                backgroundColor: bgColor,
+                border: `1px solid ${borderColor}`,
+                borderRadius: '8px',
+                color: textColor,
+                fontSize: '1rem',
+                cursor: selectedOption ? 'default' : 'pointer',
+                transition: 'all 0.15s ease',
+              }}
+            >
+              <strong style={{ marginRight: '12px' }}>{option.id}.</strong>
+              {option.text}
+            </button>
+          )
+        })}
+      </div>
+
+      {selectedOption && (
+        <div style={{ marginTop: '20px', padding: '16px', backgroundColor: selectedOption.isCorrect ? '#dafbe1' : '#ffebe9', borderRadius: '6px', border: `1px solid ${selectedOption.isCorrect ? '#c3e6cb' : '#f9cbd0'}`, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div>
+            <h4 style={{ margin: 0, color: selectedOption.isCorrect ? '#1f883d' : '#cf222e' }}>
+              {selectedOption.isCorrect ? '✅ Correct!' : '❌ Incorrect'}
+            </h4>
+            <p style={{ margin: '8px 0 0', color: '#57606a' }}>{selectedOption.rationale}</p>
           </div>
-          {answers[question.id] && (
-            <p style={{ margin: '0.75rem 0 0', color: '#57606a' }}>
-              {question.choices.find((choice) => choice.id === answers[question.id])?.rationale}
-            </p>
-          )}
+          <button
+            onClick={handleNext}
+            style={{
+              padding: '10px 20px',
+              backgroundColor: '#24292f',
+              color: '#ffffff',
+              border: 'none',
+              borderRadius: '6px',
+              fontWeight: 'bold',
+              cursor: 'pointer',
+            }}
+          >
+            {currentQuestionIdx + 1 === quizData.length ? 'See Results' : 'Next Question'}
+          </button>
         </div>
-      ))}
+      )}
 
       <div style={{ marginTop: '2rem' }}>
         <PageReplacementSimulator />

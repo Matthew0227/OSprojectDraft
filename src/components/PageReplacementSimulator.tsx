@@ -214,7 +214,7 @@ const simulateSecondChance = (
 
 const algorithmMap: Record<
   ReplacementAlgorithm,
-  (reference: number[], frameCount: number, initialFrames: Array<number | null>) => SimulationStep[],
+  (reference: number[], frameCount: number, initialFrames: Array<number | null>) => SimulationStep[]
 > = {
   FIFO: simulateFIFO,
   LRU: simulateLRU,

@@ -22,8 +22,8 @@ export default function Navbar(){
     }}>
       {/* Logo & Site Title */}
       <Link href="/" style={{display:'flex', alignItems:'center', gap:'0.75rem', textDecoration:'none', color:'inherit'}}>
-        <img src="/images/Goat logo.png" alt="OS Goat Logo" style={{height:45, width:'auto', filter:'drop-shadow(0 2px 4px rgba(0,0,0,0.2))'}} />
-        <span style={{fontSize:'1.3rem', fontWeight:'bold', color:'#fff', letterSpacing:'0.5px', textShadow:'0 1px 3px rgba(0,0,0,0.3)'}}>OS Goat</span>
+        <img src="/images/Goat logo.png" alt="GoatOS Logo" style={{height:45, width:'auto', filter:'drop-shadow(0 2px 4px rgba(0,0,0,0.2))'}} />
+        <span style={{fontSize:'1.3rem', fontWeight:'bold', color:'#fff', letterSpacing:'0.5px', textShadow:'0 1px 3px rgba(0,0,0,0.3)'}}>GoatOS</span>
       </Link>
 
       {/* Navigation Links */}

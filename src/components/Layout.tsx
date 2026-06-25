@@ -12,7 +12,7 @@ export default function Layout({children}:{children:React.ReactNode}){
       </main>
       <footer style={{borderTop:'3px solid #f39c12', background:'linear-gradient(135deg, #2c3e50 0%, #34495e 100%)', padding:'2rem', textAlign:'center', marginTop:'auto'}}>
         <div style={{maxWidth:1000, margin:'0 auto'}}>
-          <p style={{margin:'0 0 0.5rem 0', color:'#fff', fontWeight:'500'}}>🐐 OS Goat Learning — Collaborative Operating Systems Educational Project</p>
+          <p style={{margin:'0 0 0.5rem 0', color:'#fff', fontWeight:'500'}}>🐐 GoatOS Learning — Collaborative Operating Systems Educational Project</p>
           <small style={{color:'#bbb'}}>Master CPU Scheduling, Memory Management, Virtual Memory & Disk Management</small>
         </div>
       </footer>
