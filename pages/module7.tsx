@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Head from 'next/head'
 import DiskSchedulingSimulator from '../src/components/DiskSchedulingSimulator'
+import Module7Activity from '../src/components/Module7Activity'
 
 export default function Module7(){
   const themeColors = { primary: '#2c3e50', gold: '#f39c12', light: '#f8f9fa', border: '#e6edf3' }
@@ -132,12 +133,16 @@ Total = 322 tracks`}</pre>
         </div>
 
         <DiskSchedulingSimulator />
+        <Module7Activity />
 
         <h2>Summary Comparison</h2>
         <p>Totals: FCFS = 640; SSTF = 236; SCAN = 236; C-SCAN = 350; LOOK = 322.</p>
         <p>SCAN &amp; C-SCAN suit heavy loads; FCFS is fine for very low queue lengths.</p>
 
-        <p><Link href="/" style={{color:'#f39c12', textDecoration:'none', fontWeight:'bold'}}>← Back to modules</Link></p>
+        <div style={{display:'flex', gap:'1rem', flexWrap:'wrap', marginTop:'2rem'}}>
+          <Link href="/quiz" style={{display:'inline-block', padding:'0.75rem 1.2rem', borderRadius:'8px', background:'#0969da', color:'#fff', textDecoration:'none'}}>Take the Quiz</Link>
+          <Link href="/" style={{display:'inline-block', padding:'0.75rem 1.2rem', borderRadius:'8px', border:'1px solid #0969da', color:'#0969da', textDecoration:'none'}}>← Back to modules</Link>
+        </div>
       </main>
     </>
   )
